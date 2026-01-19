@@ -11,17 +11,14 @@ provider "aws" {
   region = "ap-south-1"
 }
 
-provider "aws" {
-  region = var.aws_region
-}
-
-resource "aws_instance" "my_vm" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  key_name      = var.key_name
+resource "aws_instance" "vm" {
+  ami           = "ami-02b8269d5e85954ef"   # Amazon Linux 2 (Mumbai)
+  instance_type = "t2.micro"
+  key_name      = "mumbai.key.pem"             # CHANGE THIS
 
   tags = {
-    Name = "terraform-ec2-vm"
+    Name = "terraform-ec2"
     Env  = "dev"
   }
 }
+
