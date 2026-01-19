@@ -11,7 +11,7 @@ provider "aws" {
   region = "ap-south-1"
 }
 
-resource "aws_instance" "vm" {
+resource "aws_instance" "my-vm" {
   ami           = "ami-02b8269d5e85954ef"   # Amazon Linux 2 (Mumbai)
   instance_type = "t2.micro"
   key_name      = "mumbai.key.pem"             # CHANGE THIS
